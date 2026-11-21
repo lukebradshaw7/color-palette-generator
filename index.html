@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Palette Generator</title>
+<style>
+body{font-family:Arial;background:#f8fafc;text-align:center;padding:25px}
+main{max-width:900px;margin:auto}
+#palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:15px;margin:30px 0}
+.color{height:220px;border-radius:12px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.code{background:white;width:100%;padding:15px;font-weight:bold;cursor:pointer;border:0}
+button.generate{background:#111827;color:white;padding:14px 25px;border:0;border-radius:8px;cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+<h1>Color Palette Generator</h1>
+<p>Discover beautiful colors for creative projects.</p>
+<button class="generate" onclick="generate()">Generate Palette</button>
+<div id="palette"></div>
+<p id="message">Click a HEX code to copy it.</p>
+</main>
+<script>
+function generate(){
+ const palette=document.getElementById("palette");
+ palette.innerHTML="";
+ for(let i=0;i<5;i++){
+  const color="#"+Math.floor(Math.random()*16777216).toString(16).padStart(6,"0").toUpperCase();
+  const box=document.createElement("div");
+  box.className="color";
+  box.style.background=color;
+  const button=document.createElement("button");
+  button.className="code";
+  button.textContent=color;
+  button.onclick=async()=>{
+   try{
+    await navigator.clipboard.writeText(color);
+    document.getElementById("message").textContent=color+" copied!";
+   }catch{
+    document.getElementById("message").textContent="Color: "+color;
+   }
+  };
+  box.appendChild(button);
+  palette.appendChild(box);
+ }
+}
+generate();
+</script>
+</body>
+</html>
