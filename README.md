@@ -1,23 +1,23 @@
-# Color Palette Generator
+## Color Palette Guide
 
-A creative tool for generating random color palettes.
+This project explores color combinations
+through a simple palette generator.
 
-## Features
+### Color Information
 
-- Random colors
-- HEX color display
-- Clipboard support
+- HEX color values
+- Multiple color combinations
+- Color selection
+- Palette generation
 
-## How to Use
+### Usage Instructions
 
-Generate a palette and select a color code to copy it.
+1. Open the color palette generator.
+2. Generate a new color palette.
+3. Review the available colors.
+4. Copy a color value when supported.
 
-## Technologies
+### Design Notes
 
-- HTML
-- CSS
-- JavaScript
-
-## Running Locally
-
-Open `index.html` in a modern web browser.
+Use readable color combinations
+and maintain a consistent interface.
