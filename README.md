@@ -21,3 +21,12 @@ through a simple palette generator.
 
 Use readable color combinations
 and maintain a consistent interface.
+## Manual Testing Checklist
+
+- [ ] Generate two palettes and compare their HEX values.
+- [ ] Confirm each displayed HEX value has a valid format.
+- [ ] Test copying a color if clipboard support exists.
+
+### Test Notes
+
+Record the observed result and any reproducible issue after running the tests.
